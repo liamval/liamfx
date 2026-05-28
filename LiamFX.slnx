@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Liam.Datos/Liam.Datos.csproj" Id="cd7aa4df-740b-43dc-9908-2c39e848f59c" />
+  <Project Path="Liam.Prueba/Liam.Prueba.csproj" Id="a4a2ead2-437c-48ae-8754-081b91314567" />
+  <Project Path="Liam/Liam.csproj" Id="d2732c8b-a695-40b5-86f3-d06fb6691104" />
+</Solution>

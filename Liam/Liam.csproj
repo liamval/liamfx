@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2732C8B-A695-40B5-86F3-D06FB6691104}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Liam</RootNamespace>
+    <AssemblyName>Liam</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AvanceInforme.cs" />
+    <Compile Include="Busqueda.cs" />
+    <Compile Include="CampoAttribute.cs" />
+    <Compile Include="ClaveAttribute.cs" />
+    <Compile Include="Componente.cs" />
+    <Compile Include="ComponenteInformacion.cs" />
+    <Compile Include="ComponenteRegistro.cs" />
+    <Compile Include="ComponenteXml.cs" />
+    <Compile Include="CondicionesAttribute.cs" />
+    <Compile Include="DatoCondicion.cs" />
+    <Compile Include="Elemento.cs" />
+    <Compile Include="EnsambladoInformacion.cs" />
+    <Compile Include="EstacionInformacion.cs" />
+    <Compile Include="Fabrica.cs" />
+    <Compile Include="Flujo.cs" />
+    <Compile Include="IComponente.cs" />
+    <Compile Include="Idioma.cs" />
+    <Compile Include="LiamException.cs" />
+    <Compile Include="Listado.cs" />
+    <Compile Include="ModeloAttribute.cs" />
+    <Compile Include="OrdinalAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropiedadInformacion.cs" />
+    <Compile Include="RedCliente.cs" />
+    <Compile Include="RedRespuesta.cs" />
+    <Compile Include="Supervisor.cs" />
+    <Compile Include="Utilero.cs" />
+    <Compile Include="ValorLogico.cs" />
+    <Compile Include="ValorPredefinidoAttribute.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
