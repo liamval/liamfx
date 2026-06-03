@@ -4,7 +4,6 @@ using cfg = System.Configuration;
 using crp = System.Security.Cryptography;
 using dgx = System.Diagnostics;
 using dtc = System.Data;
-using iop = System.Runtime.InteropServices;
 using lst = System.Collections.Generic;
 using rgx = System.Text.RegularExpressions;
 using sql = System.Data.SqlClient;
@@ -54,21 +53,6 @@ namespace Liam
       /// Representa el texto "No".
       /// </summary>
       public static string No { get; internal set; }
-
-      /// <summary>
-      /// Representa el texto "Listo".
-      /// </summary>
-      public static string Listo { get; internal set; }
-
-      /// <summary>
-      /// Representa el texto "S/N" (sin número).
-      /// </summary>
-      public static string S_N { get; internal set; }
-
-      /// <summary>
-      /// Representa 1 pixel blanco en formato Jpeg.
-      /// </summary>
-      public static string Jpeg1x1Pixel { get { return "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////2wBDAf//////////////////////////////////////////////////////////////////////////////////////wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAP/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AKAA/9k="; } }
 
       /// <summary>
       /// Contiene la lista de los meses con su índice corregido (Ejemplo: 2 es febrero).
@@ -302,72 +286,6 @@ namespace Liam
          }
 
          return resultado;
-      }
-
-      /// <summary>
-      /// Devuelve un texto limpio de caracteres de tabulación, nueva línea y espacios en blanco.
-      /// </summary>
-      /// <param name="text">texto a limpiar.</param>
-      /// <returns>Texto limpio de caracteres de tabulación y nueva línea y espacios en blanco.</returns>
-      public static string Limpiar(string text)
-      {
-         if (text is null)
-            return string.Empty;
-
-         return text.Replace('\t', ' ').Replace('\n', ' ').Replace('\r', ' ').Trim();
-      }
-
-      /// <summary>
-      /// Acceso directo para agregar un parámetro al comando.
-      /// </summary>
-      /// <param name="cmd">Objeto de tipo <see cref="sql.SqlCommand"/> a extender.</param>
-      /// <param name="name">Nombre del parámetro.</param>
-      /// <param name="value">Valor del parámetro.</param>
-      /// <param name="type">Opcional. Tipo de dato del parámetro. predefinido: int</param>
-      /// <param name="size">Opcional. Longitud del tipo de datos. predefinido: 0</param>
-      /// <param name="scale">Opcional. Cantidad de decimales del tipo de datos. predefinido: 0</param>
-      /// <param name="isOut">Opcional. Indica si es un parámetro de salida. predefinido: no</param>
-      /// <param name="isReturn">Opcional. Indica si es un parámetro de retorno. predefinido: no</param>
-      public static void AddParam(sql.SqlCommand cmd, string name, object value, dtc.SqlDbType type = dtc.SqlDbType.Int, int size = 0, int scale = 0, bool isOut = false, bool isReturn = false)
-      {
-         sql.SqlParameter p = new sql.SqlParameter(parameterName: name, dbType: type)
-         {
-            Value = value is null ? DBNull.Value : value
-         };
-
-         if (size > 0)
-            p.Size = size;
-         if (scale > 0)
-            p.Scale = (byte)scale;
-         if (isOut)
-            p.Direction = dtc.ParameterDirection.InputOutput;
-         if (isReturn)
-            p.Direction = dtc.ParameterDirection.ReturnValue;
-
-         cmd.Parameters.Add(p);
-      }
-
-      /// <summary>
-      /// 
-      /// </summary>
-      /// <param name="inst"></param>
-      /// <param name="index"></param>
-      /// <param name="defaultValue"></param>
-      /// <returns></returns>
-      public static T ObtenerValor<T>(object[] inst, int index, T defaultValue)
-      {
-         return inst[index] is DBNull ? defaultValue : (T)inst[index];
-      }
-
-      /// <summary>
-      /// Devuelve un indicador que determina si dos fechas tiene el mismo año y mes.
-      /// </summary>
-      /// <param name="fecha1">Una fecha a evaluar.</param>
-      /// <param name="fecha2">Otra fecha a evaluar.</param>
-      /// <returns>Indicador que determina si dos fechas tiene el mismo año y mes.</returns>
-      public static bool EsMismoPeriodo(DateTime fecha1, DateTime fecha2)
-      {
-         return fecha1.Year == fecha2.Year && fecha1.Month == fecha2.Month; // && fecha1.Kind == fecha2.Kind;
       }
 
       /// <summary>

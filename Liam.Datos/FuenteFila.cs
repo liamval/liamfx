@@ -1,5 +1,4 @@
 ﻿using System;
-using lst = System.Collections.Generic;
 
 namespace Liam.Datos
 {

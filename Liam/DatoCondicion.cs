@@ -21,16 +21,16 @@ namespace Liam
       TextoVacioComoNulo = 4,
 
       /// <summary>Convierte el dato en texto (<see cref="string"/>).</summary>
-      ConvertirATexto = 8,
+      ComoTexto = 8,
 
       /// <summary>Convierte el dato en número decimal (<see cref="decimal"/>).</summary>
-      ConvertirANumeroDec = 16,
+      ComoNumeroDec = 16,
 
       /// <summary>Convierte el dato en número entero de 32bit (<see cref="int"/>).</summary>
-      ConvertirANumero32 = 32,
+      ComoNumero32 = 32,
 
       /// <summary>Convierte el dato en número entero de 64bit (<see cref="long"/>).</summary>
-      ConvertirANumero64 = 64,
+      ComoNumero64 = 64,
 
       /// <summary>Transforma el texto a mayúsculas.</summary>
       TransformarMayuscula = 128,

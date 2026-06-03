@@ -11,9 +11,6 @@ namespace Liam.Datos
       /// <summary>
       /// Obtiene las tablas de resultados devueltas por la consulta a la fuente de datos.
       /// </summary>
-      /// <remarks>
-      /// Cada tabla contiene filas de datos que pueden ser utilizadas para construir componentes o estructuras de datos personalizadas.
-      /// </remarks>
       public lst.List<FuenteTabla> Tablas { get; internal set; }
 
       /// <summary>
@@ -248,7 +245,7 @@ namespace Liam.Datos
 
       private static void MostrarSalida(string salida, bool finLinea = true)
       {
-#if DEBUG_1
+#if DEBUG1
          if (finLinea)
             System.Diagnostics.Debug.WriteLine(salida);
          else
@@ -266,17 +263,17 @@ namespace Liam.Datos
       {
          bool tieneConvertirANumero = false;
 
-         if ((condiciones & DatoCondicion.ConvertirANumero32) == DatoCondicion.ConvertirANumero32)
+         if ((condiciones & DatoCondicion.ComoNumero32) == DatoCondicion.ComoNumero32)
          {
             valor = Convert.ChangeType(valor, typeof(int));
             tieneConvertirANumero = true;
          }
-         else if ((condiciones & DatoCondicion.ConvertirANumero64) == DatoCondicion.ConvertirANumero64)
+         else if ((condiciones & DatoCondicion.ComoNumero64) == DatoCondicion.ComoNumero64)
          {
             valor = Convert.ChangeType(valor, typeof(long));
             tieneConvertirANumero = true;
          }
-         else if ((condiciones & DatoCondicion.ConvertirANumeroDec) == DatoCondicion.ConvertirANumeroDec)
+         else if ((condiciones & DatoCondicion.ComoNumeroDec) == DatoCondicion.ComoNumeroDec)
          {
             valor = Convert.ChangeType(valor, typeof(decimal));
             tieneConvertirANumero = true;
@@ -293,7 +290,7 @@ namespace Liam.Datos
             }
          }
 
-         if ((condiciones & DatoCondicion.ConvertirATexto) == DatoCondicion.ConvertirATexto)
+         if ((condiciones & DatoCondicion.ComoTexto) == DatoCondicion.ComoTexto)
          {
             valor = Convert.ChangeType(valor, typeof(string));
          }

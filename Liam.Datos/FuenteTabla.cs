@@ -11,7 +11,7 @@ namespace Liam.Datos
       /// <summary>
       /// Obtiene la lista de columnas que componen la tabla.
       /// </summary>
-      public ColumnaColeccion Columnas { get; internal set; }
+      public FuenteColumnaColeccion Columnas { get; internal set; }
 
       /// <summary>
       /// Obtiene la lista de filas que componen la tabla.
@@ -69,7 +69,7 @@ namespace Liam.Datos
       private void Inicializar()
       {
          this.Filas = new lst.List<FuenteFila>();
-         this.Columnas = new ColumnaColeccion();
+         this.Columnas = new FuenteColumnaColeccion();
       }
 
       public FuenteFila CrearFila()

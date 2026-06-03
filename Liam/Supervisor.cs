@@ -1,5 +1,4 @@
 ﻿using System;
-using drw = System.Drawing;
 using gbl = System.Globalization;
 using ise = System.Runtime.InteropServices;
 using lst = System.Collections.Generic;
@@ -198,9 +197,6 @@ namespace Liam
 
          Utilero.Si = ObtenerTexto(null, "Liam_Si");
          Utilero.No = ObtenerTexto(null, "Liam_No");
-
-         Utilero.Listo = ObtenerTexto(null, "Liam_Listo");
-         Utilero.S_N = ObtenerTexto(null, "Liam_SN");
 
          var meses = IdiomaActual.Configuracion.DateTimeFormat.MonthNames;
          Utilero.Meses = new string[] {

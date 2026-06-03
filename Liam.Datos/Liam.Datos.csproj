@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FuenteColumna.cs" />
+    <Compile Include="FuenteColumnaColeccion.cs" />
     <Compile Include="FuenteConsulta.cs" />
     <Compile Include="FuenteConsultaTipo.cs" />
     <Compile Include="FuenteDatosAttribute.cs" />

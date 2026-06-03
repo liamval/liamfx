@@ -1,5 +1,7 @@
-﻿using Liam.Datos;
-using System;
+﻿using System;
+using Liam.Datos;
+using Liam.Prueba.Unspsc;
+using Liam.Prueba.Unspsc.Modelos;
 using dgx = System.Diagnostics;
 using thr = System.Threading;
 using tsk = System.Threading.Tasks;
@@ -21,6 +23,8 @@ namespace Liam.Prueba
             "union all " +
             "select top 2000 * from [UNSPSC$] ";
 
+         await ObtenerDatos(listar1); // calentar
+
          Recuadro.Mostrar($"{Supervisor.Ejecutable.Nombre} {Supervisor.Ejecutable.Version}", "Liam");
 
          Console.WriteLine("\nObtener y contruir 1 dato");
@@ -28,7 +32,6 @@ namespace Liam.Prueba
          Recuadro.PintarLinea(110);
          await ObtenerDatos(listar1);
          await ObtenerDatos(listar1);
-
          Console.WriteLine("\nObtener y contruir 100 datos");
          Console.WriteLine($"{"Método",50}{"Consulta",20}{"Construcción",20}");
          Recuadro.PintarLinea(110);

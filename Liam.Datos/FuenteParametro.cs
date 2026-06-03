@@ -1,6 +1,4 @@
-﻿using dat = System.Data;
-
-namespace Liam.Datos
+﻿namespace Liam.Datos
 {
    /// <summary>
    /// Representa un parámetro para una variable de una solicitud.
@@ -31,11 +29,6 @@ namespace Liam.Datos
       /// Obtiene o establece el paso del parámetro al método.
       /// </summary>
       public VariablePase Pase { get; set; }
-
-      /// <summary>
-      /// Obtiene o establece el objeto subyacente del parámetro.
-      /// </summary>
-      internal dat.IDbDataParameter ParametroInterno { get; set; }
 
       /// <summary>
       /// Inicializa una nueva instancia de la clase <see cref="FuenteParametro"/>.
